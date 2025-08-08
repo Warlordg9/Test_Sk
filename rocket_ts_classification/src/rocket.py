@@ -105,6 +105,6 @@ class RocketTransformer(BaseEstimator, TransformerMixin):
         ts_features = np.zeros(2 * len(self.kernels), dtype=np.float32)
         for i, kernel in enumerate(self.kernels):
             max_val, ppv = self._apply_kernel(x, kernel)
-            ts_features[2*i] = max_val
-            ts_features[2*i+1] = ppv
-        return ts_features 
+            ts_features[2*i] = max_val   
+            ts_features[2*i+1] = ppv  
+        return ts_features
