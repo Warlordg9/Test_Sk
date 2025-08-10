@@ -62,7 +62,7 @@ class Graph:
         plt.title("Graph with Maximum Independent Set")
         plt.savefig("graph.png")
         plt.show()
-
+    pass
 if __name__ == "__main__":
     np.random.seed(42)
     
@@ -82,3 +82,4 @@ if __name__ == "__main__":
             f.write(f"Invited Friends: {sorted(mis)}\n")
         
         g.draw(highlight_set=mis)
+
