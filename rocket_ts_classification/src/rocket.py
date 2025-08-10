@@ -1,4 +1,3 @@
-# rocket.py
 import numpy as np
 from scipy import stats
 from sklearn.linear_model import RidgeClassifierCV
@@ -75,6 +74,7 @@ class ROCKET:
             conv[t] = np.dot(segment, kernel) + bias
         
         return conv
+    pass
 
 def load_data(dataset_name='Ham'):
     X_train, y_train = load_UCR_UEA_dataset(dataset_name, split='train', return_X_y=True)
@@ -89,6 +89,7 @@ def load_data(dataset_name='Ham'):
     X_test = scaler.transform(X_test.T).T
     
     return X_train, y_train, X_test, y_test
+    pass
 
 def run_experiment(kernel_type, n_runs=10, num_kernels=10000):
     accuracies = []
@@ -109,6 +110,7 @@ def run_experiment(kernel_type, n_runs=10, num_kernels=10000):
         print(f"Run {run+1}/{n_runs} - Accuracy: {acc:.4f}")
     
     return accuracies
+    pass
 
 if __name__ == "__main__":
     X_train, y_train, X_test, y_test = load_data()
