@@ -1,11 +1,6 @@
-FROM ubuntu:22.04
+FROM alpine:latest
 
-RUN apt-get update && \
-    apt-get install -y gawk sed grep coreutils && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache bash grep coreutils
 
-WORKDIR /app
-COPY word_count.sh /app/word_count.sh
-RUN chmod +x /app/word_count.sh
-
-ENTRYPOINT ["/app/word_count.sh"]
+COPY my_script.sh /usr/local/bin/my_script.sh
+RUN chmod +x /usr/local/bin/my_script.sh
